@@ -33,6 +33,17 @@
                     //stop form from submitting
                     return false;
                 }
+
+                document.querySelector('#clears').onclick = function() {
+                    document.querySelectorAll('li').forEach(element => {
+                        element.remove();
+                    });
+                }
+
+                document.querySelector('#clear').onclick = function() {
+                    let lst = document.querySelectorAll('li');
+                    lst[lst.length-1].remove()
+                }
             });
         </script>
     </head>
@@ -44,5 +55,7 @@
             <input id="task" placeholder="New Task" type="text">
             <input id="submit" type="submit">
         </form>
+        <button id="clears">Clear all tasks</button>
+        <button id="clear">Clear last task</button>
     </body>
 </html>
